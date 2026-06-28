@@ -1,99 +1,741 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Muhammad Sajjad Portfolio</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<style>
-body{
-margin:0;
-font-family:Arial, sans-serif;
-background:#06070a;
-color:white;
-}
-section{
-padding:50px 25px;
-}
-.hero{
-min-height:100vh;
-display:flex;
-align-items:center;
-background:radial-gradient(circle at top,#33210a,#06070a 55%);
-}
-h1{
-font-size:44px;
-line-height:1.1;
-margin-bottom:20px;
-}
-.gold{
-color:#d6b25e;
-}
-p{
-color:#c7c7c7;
-font-size:18px;
-line-height:1.7;
-}
-.btn{
-display:inline-block;
-background:#d6b25e;
-color:#111;
-padding:14px 22px;
-border-radius:40px;
-font-weight:bold;
-text-decoration:none;
-margin-top:20px;
-}
-.card{
-background:#11131a;
-border:1px solid #2a2d38;
-padding:25px;
-border-radius:22px;
-margin:15px 0;
-}
-h2{
-font-size:34px;
-}
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Muhammad Sajjad | Brand Identity & Visual Designer</title>
+  <meta name="description" content="Muhammad Sajjad is a Brand Identity & Visual Designer with 7+ years of experience in branding, social media design, fast food restaurant branding, menu design, company profiles, brochures and marketing visuals." />
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
+
+    html{
+      scroll-behavior:smooth;
+    }
+
+    body{
+      font-family:Arial, Helvetica, sans-serif;
+      background:#06070a;
+      color:#f6f3ec;
+      line-height:1.6;
+      overflow-x:hidden;
+    }
+
+    a{
+      text-decoration:none;
+      color:inherit;
+    }
+
+    .container{
+      width:90%;
+      max-width:1150px;
+      margin:auto;
+    }
+
+    header{
+      position:fixed;
+      top:14px;
+      left:0;
+      right:0;
+      z-index:100;
+    }
+
+    nav{
+      background:rgba(10,12,18,.78);
+      backdrop-filter:blur(18px);
+      border:1px solid rgba(255,255,255,.12);
+      border-radius:50px;
+      padding:14px 20px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      box-shadow:0 20px 60px rgba(0,0,0,.35);
+    }
+
+    .logo{
+      font-weight:900;
+      letter-spacing:-.5px;
+      font-size:18px;
+    }
+
+    .nav-links{
+      display:flex;
+      gap:22px;
+      color:#aaa;
+      font-size:14px;
+    }
+
+    .nav-links a:hover{
+      color:#fff;
+    }
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      padding:13px 21px;
+      border-radius:40px;
+      font-weight:800;
+      transition:.3s;
+      border:1px solid rgba(255,255,255,.12);
+      font-size:14px;
+    }
+
+    .btn:hover{
+      transform:translateY(-3px);
+    }
+
+    .btn-primary{
+      background:linear-gradient(135deg,#d6b25e,#ff7a1a);
+      color:#08090d;
+      border:none;
+      box-shadow:0 18px 40px rgba(214,178,94,.22);
+    }
+
+    .btn-dark{
+      background:rgba(255,255,255,.07);
+      color:#fff;
+    }
+
+    .hero{
+      min-height:100vh;
+      padding:140px 0 80px;
+      display:flex;
+      align-items:center;
+      background:
+      radial-gradient(circle at 20% 10%,rgba(214,178,94,.22),transparent 32%),
+      radial-gradient(circle at 80% 0%,rgba(255,122,26,.14),transparent 30%),
+      linear-gradient(180deg,#090a0e,#06070a);
+    }
+
+    .hero-grid{
+      display:grid;
+      grid-template-columns:1.15fr .85fr;
+      gap:50px;
+      align-items:center;
+    }
+
+    .badge{
+      display:inline-block;
+      padding:8px 14px;
+      border:1px solid rgba(255,255,255,.14);
+      background:rgba(255,255,255,.06);
+      border-radius:50px;
+      color:#ddd;
+      font-size:13px;
+      margin-bottom:22px;
+    }
+
+    h1{
+      font-size:clamp(42px,7vw,82px);
+      line-height:.95;
+      letter-spacing:-4px;
+      margin-bottom:24px;
+    }
+
+    .gold{
+      background:linear-gradient(135deg,#fff,#d6b25e,#ff7a1a);
+      -webkit-background-clip:text;
+      color:transparent;
+    }
+
+    .hero p{
+      color:#aaa;
+      font-size:18px;
+      max-width:650px;
+      margin-bottom:30px;
+    }
+
+    .actions{
+      display:flex;
+      gap:13px;
+      flex-wrap:wrap;
+    }
+
+    .stats{
+      margin-top:32px;
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:12px;
+    }
+
+    .stat{
+      background:rgba(255,255,255,.06);
+      border:1px solid rgba(255,255,255,.12);
+      border-radius:22px;
+      padding:18px;
+    }
+
+    .stat strong{
+      display:block;
+      font-size:25px;
+      color:#fff;
+    }
+
+    .stat span{
+      font-size:13px;
+      color:#aaa;
+    }
+
+    .profile-card{
+      background:linear-gradient(180deg,rgba(255,255,255,.11),rgba(255,255,255,.035));
+      border:1px solid rgba(255,255,255,.13);
+      border-radius:34px;
+      padding:30px;
+      box-shadow:0 30px 90px rgba(0,0,0,.45);
+      position:relative;
+      overflow:hidden;
+    }
+
+    .profile-card:before{
+      content:"";
+      position:absolute;
+      width:220px;
+      height:220px;
+      border-radius:50%;
+      background:radial-gradient(circle,rgba(214,178,94,.35),transparent 70%);
+      top:-80px;
+      right:-80px;
+    }
+
+    .avatar{
+      width:82px;
+      height:82px;
+      border-radius:24px;
+      background:linear-gradient(135deg,#d6b25e,#ff7a1a);
+      color:#111;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-size:30px;
+      font-weight:900;
+      margin-bottom:24px;
+      position:relative;
+    }
+
+    .profile-card h2{
+      font-size:34px;
+      line-height:1;
+      margin-bottom:8px;
+      position:relative;
+    }
+
+    .profile-card p{
+      color:#aaa;
+      margin-bottom:22px;
+      position:relative;
+    }
+
+    .tags{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      position:relative;
+    }
+
+    .tags span{
+      padding:9px 12px;
+      border-radius:40px;
+      background:rgba(255,255,255,.07);
+      border:1px solid rgba(255,255,255,.12);
+      color:#ddd;
+      font-size:13px;
+    }
+
+    section{
+      padding:90px 0;
+    }
+
+    .section-head{
+      margin-bottom:38px;
+      max-width:780px;
+    }
+
+    .kicker{
+      color:#d6b25e;
+      text-transform:uppercase;
+      letter-spacing:2px;
+      font-weight:900;
+      font-size:12px;
+      margin-bottom:10px;
+    }
+
+    .section-title{
+      font-size:clamp(34px,5vw,58px);
+      line-height:1;
+      letter-spacing:-2px;
+      margin-bottom:16px;
+    }
+
+    .section-text{
+      color:#aaa;
+      font-size:17px;
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:18px;
+    }
+
+    .card{
+      background:rgba(255,255,255,.055);
+      border:1px solid rgba(255,255,255,.12);
+      border-radius:28px;
+      padding:25px;
+      transition:.3s;
+    }
+
+    .card:hover{
+      transform:translateY(-7px);
+      border-color:rgba(214,178,94,.5);
+      background:rgba(255,255,255,.075);
+    }
+
+    .work-art{
+      height:190px;
+      border-radius:22px;
+      margin-bottom:20px;
+      padding:20px;
+      display:flex;
+      align-items:end;
+      font-size:26px;
+      font-weight:900;
+      line-height:1;
+      color:#fff;
+      background:linear-gradient(135deg,#d6b25e,#ff7a1a);
+    }
+
+    .art2{background:linear-gradient(135deg,#ff3d00,#ffb000);}
+    .art3{background:linear-gradient(135deg,#6f4cff,#ff3d8b);}
+    .art4{background:linear-gradient(135deg,#101827,#3a4d72);}
+    .art5{background:linear-gradient(135deg,#0f5132,#d6b25e);}
+    .art6{background:linear-gradient(135deg,#111,#d6b25e);}
+
+    .card small{
+      color:#d6b25e;
+      text-transform:uppercase;
+      letter-spacing:1.3px;
+      font-weight:900;
+      font-size:11px;
+    }
+
+    .card h3{
+      font-size:23px;
+      margin:10px 0;
+      line-height:1.2;
+    }
+
+    .card p{
+      color:#aaa;
+      font-size:15px;
+    }
+
+    .service-icon{
+      width:50px;
+      height:50px;
+      border-radius:16px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      background:rgba(214,178,94,.15);
+      color:#d6b25e;
+      font-size:24px;
+      margin-bottom:18px;
+    }
+
+    .about-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:25px;
+      align-items:start;
+    }
+
+    .process-step{
+      background:rgba(255,255,255,.055);
+      border:1px solid rgba(255,255,255,.12);
+      border-radius:24px;
+      padding:22px;
+      margin-bottom:14px;
+    }
+
+    .process-step strong{
+      color:#d6b25e;
+      display:block;
+      margin-bottom:6px;
+    }
+
+    .contact-box{
+      background:
+      radial-gradient(circle at top left,rgba(214,178,94,.18),transparent 32%),
+      rgba(255,255,255,.055);
+      border:1px solid rgba(255,255,255,.12);
+      border-radius:36px;
+      padding:46px;
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:30px;
+      align-items:center;
+    }
+
+    .links a{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:15px;
+      background:rgba(255,255,255,.06);
+      border:1px solid rgba(255,255,255,.12);
+      padding:15px;
+      border-radius:18px;
+      margin-bottom:12px;
+      color:#ddd;
+      transition:.3s;
+    }
+
+    .links a:hover{
+      background:rgba(214,178,94,.15);
+      border-color:rgba(214,178,94,.4);
+      color:#fff;
+    }
+
+    footer{
+      padding:30px 0;
+      border-top:1px solid rgba(255,255,255,.12);
+      color:#aaa;
+      text-align:center;
+      font-size:14px;
+    }
+
+    @media(max-width:850px){
+      header{
+        top:10px;
+      }
+
+      nav{
+        padding:12px 15px;
+      }
+
+      .nav-links{
+        display:none;
+      }
+
+      .hero{
+        padding:125px 0 60px;
+      }
+
+      .hero-grid,
+      .about-grid,
+      .contact-box{
+        grid-template-columns:1fr;
+      }
+
+      .grid{
+        grid-template-columns:1fr;
+      }
+
+      .stats{
+        grid-template-columns:1fr;
+      }
+
+      h1{
+        letter-spacing:-2px;
+      }
+
+      .section-title{
+        letter-spacing:-1px;
+      }
+
+      .contact-box{
+        padding:28px;
+      }
+
+      .btn{
+        width:100%;
+      }
+    }
+  </style>
 </head>
+
 <body>
 
+<header>
+  <div class="container">
+    <nav>
+      <div class="logo">Muhammad Sajjad</div>
+      <div class="nav-links">
+        <a href="#work">Work</a>
+        <a href="#services">Services</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <a class="btn btn-primary" href="https://wa.me/923096402242" target="_blank">Start Project</a>
+    </nav>
+  </div>
+</header>
+
 <section class="hero">
-<div>
-<h1>Muhammad Sajjad</h1>
-<h2 class="gold">Brand Identity & Visual Designer</h2>
-<p>Designing Premium Visual Brands That Build Trust, Recognition & Growth.</p>
-<p>I help businesses create strong brand identities, social media creatives, company profiles, brochures, restaurant branding, menu designs, and marketing visuals.</p>
-<a class="btn" href="https://wa.me/923096402242">Contact on WhatsApp</a>
-</div>
+  <div class="container hero-grid">
+    <div>
+      <div class="badge">7+ Years Experience · Brand Identity & Visual Designer</div>
+
+      <h1>
+        Designing Premium Visual Brands That Build
+        <span class="gold">Trust, Recognition & Growth</span>
+      </h1>
+
+      <p>
+        I help businesses create strong brand identities, social media creatives,
+        company profiles, brochures, restaurant branding, menu designs, and marketing
+        visuals that look professional, memorable, and market-ready.
+      </p>
+
+      <div class="actions">
+        <a class="btn btn-primary" href="#work">View Selected Work</a>
+        <a class="btn btn-dark" href="mailto:sajjadsharif082@gmail.com">Email Me</a>
+      </div>
+
+      <div class="stats">
+        <div class="stat">
+          <strong>7+</strong>
+          <span>Years Experience</span>
+        </div>
+        <div class="stat">
+          <strong>Brand</strong>
+          <span>Identity Design</span>
+        </div>
+        <div class="stat">
+          <strong>Social</strong>
+          <span>Media & Marketing</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="profile-card">
+      <div class="avatar">MS</div>
+      <h2>Muhammad Sajjad</h2>
+      <p>Brand Identity & Visual Designer</p>
+
+      <div class="tags">
+        <span>Brand Identity</span>
+        <span>Social Media Design</span>
+        <span>Restaurant Branding</span>
+        <span>Menu Design</span>
+        <span>Company Profiles</span>
+        <span>Brochures</span>
+      </div>
+    </div>
+  </div>
 </section>
 
-<section>
-<h2>Selected Work</h2>
-<div class="card">
-<h3>Fast Food & Restaurant Branding</h3>
-<p>Menu design, social media creatives, packaging and promotional visuals for food brands.</p>
-</div>
-<div class="card">
-<h3>Brand Identity Design</h3>
-<p>Premium logos, colors, typography and full visual identity systems.</p>
-</div>
-<div class="card">
-<h3>Social Media Design</h3>
-<p>Professional posts, stories, ads and campaign designs.</p>
-</div>
+<section id="work">
+  <div class="container">
+    <div class="section-head">
+      <div class="kicker">Selected Work</div>
+      <h2 class="section-title">Strategic visuals created for brands, restaurants and growing businesses.</h2>
+      <p class="section-text">
+        A focused presentation of branding, social media, fast food, company profile,
+        print and marketing design work.
+      </p>
+    </div>
+
+    <div class="grid">
+      <div class="card">
+        <div class="work-art art2">Fast Food Branding</div>
+        <small>Restaurant Branding</small>
+        <h3>Fast Food Brand Identity</h3>
+        <p>Bold visual direction for food brands, menus, social media and promotional campaigns.</p>
+      </div>
+
+      <div class="card">
+        <div class="work-art">Brand Identity</div>
+        <small>Brand System</small>
+        <h3>Premium Brand Identity</h3>
+        <p>Clean and professional identity systems for businesses that want to look trusted.</p>
+      </div>
+
+      <div class="card">
+        <div class="work-art art3">Social Media</div>
+        <small>Digital Design</small>
+        <h3>Social Media Campaigns</h3>
+        <p>High-impact social posts, stories, ads and promotional creatives for digital platforms.</p>
+      </div>
+
+      <div class="card">
+        <div class="work-art art4">Company Profile</div>
+        <small>Corporate Design</small>
+        <h3>Company Profiles</h3>
+        <p>Professional company profiles, business presentations and corporate layouts.</p>
+      </div>
+
+      <div class="card">
+        <div class="work-art art5">Brochures</div>
+        <small>Print Design</small>
+        <h3>Brochure & Marketing Material</h3>
+        <p>Brochures, flyers, posters, catalogs and print-ready marketing designs.</p>
+      </div>
+
+      <div class="card">
+        <div class="work-art art6">Food Packaging</div>
+        <small>Packaging</small>
+        <h3>Food Packaging Visuals</h3>
+        <p>Packaging labels, food brand visuals, stickers and promotional mockups.</p>
+      </div>
+    </div>
+  </div>
 </section>
 
-<section>
-<h2>About Me</h2>
-<p>I’m Muhammad Sajjad, a Brand Identity & Visual Designer with 7+ years of professional experience. I specialize in brand identity, social media design, restaurant branding, menu design, company profiles, brochures and marketing materials.</p>
+<section id="services">
+  <div class="container">
+    <div class="section-head">
+      <div class="kicker">Services</div>
+      <h2 class="section-title">Design services built for premium brand presentation.</h2>
+      <p class="section-text">
+        From identity to marketing creatives, every visual is designed to improve clarity,
+        trust and brand recall.
+      </p>
+    </div>
+
+    <div class="grid">
+      <div class="card">
+        <div class="service-icon">◆</div>
+        <h3>Brand Identity Design</h3>
+        <p>Logo direction, visual identity, color palette, typography and brand guidelines.</p>
+      </div>
+
+      <div class="card">
+        <div class="service-icon">📱</div>
+        <h3>Social Media Design</h3>
+        <p>Posts, stories, ads, campaigns, launch creatives and digital brand content.</p>
+      </div>
+
+      <div class="card">
+        <div class="service-icon">🍔</div>
+        <h3>Fast Food & Restaurant Branding</h3>
+        <p>Menu design, packaging, promotional banners and food brand visuals.</p>
+      </div>
+
+      <div class="card">
+        <div class="service-icon">▣</div>
+        <h3>Company Profiles</h3>
+        <p>Premium company profiles, business presentations and corporate documents.</p>
+      </div>
+
+      <div class="card">
+        <div class="service-icon">✦</div>
+        <h3>Brochure & Print Design</h3>
+        <p>Brochures, flyers, posters, standees, catalogs and marketing materials.</p>
+      </div>
+
+      <div class="card">
+        <div class="service-icon">↗</div>
+        <h3>Marketing Visuals</h3>
+        <p>Campaign visuals, product ads, promotional creatives and brand assets.</p>
+      </div>
+    </div>
+  </div>
 </section>
 
-<section>
-<h2>Contact</h2>
-<p>Email: sajjadsharif082@gmail.com</p>
-<p>Behance: www.behance.net/msajjad005</p>
-<p>Instagram: @maliksajjad005</p>
-<a class="btn" href="mailto:sajjadsharif082@gmail.com">Send Email</a>
+<section id="about">
+  <div class="container about-grid">
+    <div class="card">
+      <div class="kicker">About</div>
+      <h2 class="section-title">Visual design with strategy, clarity and premium presentation.</h2>
+
+      <p>
+        I’m Muhammad Sajjad, a Brand Identity & Visual Designer with 7+ years of
+        professional experience. I specialize in creating premium brand identities,
+        social media designs, company profiles, brochures, restaurant branding,
+        menu designs, print materials and marketing visuals for businesses that
+        want to look professional and stand out.
+      </p>
+
+      <br>
+
+      <p>
+        I have strong experience working with fast food restaurants, cafes, food brands
+        and growing businesses, helping them build attractive visuals that improve
+        brand recognition, customer trust and marketing impact.
+      </p>
+    </div>
+
+    <div>
+      <div class="process-step">
+        <strong>01 · Discovery & Direction</strong>
+        <p>Understanding your brand, audience, competition, positioning and visual goals.</p>
+      </div>
+
+      <div class="process-step">
+        <strong>02 · Concept & Visual System</strong>
+        <p>Creating strong design directions, color systems, typography and layout style.</p>
+      </div>
+
+      <div class="process-step">
+        <strong>03 · Design Execution</strong>
+        <p>Designing premium visuals for digital, print, restaurant branding and marketing use.</p>
+      </div>
+
+      <div class="process-step">
+        <strong>04 · Final Delivery</strong>
+        <p>Preparing ready-to-use files with proper formats for online and print platforms.</p>
+      </div>
+    </div>
+  </div>
 </section>
+
+<section id="contact">
+  <div class="container">
+    <div class="contact-box">
+      <div>
+        <div class="kicker">Let’s Work</div>
+        <h2 class="section-title">Let’s build a brand that looks premium, professional & memorable.</h2>
+        <p class="section-text">
+          Have a branding, social media, restaurant, brochure, company profile or
+          marketing design project? Send a message and let’s discuss the direction.
+        </p>
+        <br>
+        <a class="btn btn-primary" href="https://wa.me/923096402242" target="_blank">Contact on WhatsApp</a>
+      </div>
+
+      <div class="links">
+        <a href="mailto:sajjadsharif082@gmail.com">
+          <span>Email</span>
+          <strong>Send</strong>
+        </a>
+
+        <a href="https://www.behance.net/msajjad005" target="_blank">
+          <span>Behance</span>
+          <strong>Open</strong>
+        </a>
+
+        <a href="https://www.linkedin.com/in/m-sajjad-8745b823b" target="_blank">
+          <span>LinkedIn</span>
+          <strong>Open</strong>
+        </a>
+
+        <a href="https://www.instagram.com/maliksajjad005" target="_blank">
+          <span>Instagram</span>
+          <strong>Open</strong>
+        </a>
+
+        <a href="https://pin.it/34MAw3Bav" target="_blank">
+          <span>Pinterest</span>
+          <strong>Open</strong>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    © 2026 Muhammad Sajjad · Brand Identity · Social Media · Restaurant Branding · Print Design
+  </div>
+</footer>
 
 </body>
 </html>
